@@ -1,0 +1,6 @@
+C:\Users\insti\Documents\tutorial\.mono\temp\bin\Tools\tutorial.dll
+C:\Users\insti\Documents\tutorial\.mono\temp\bin\Tools\tutorial.pdb
+C:\Users\insti\Documents\tutorial\.mono\temp\obj\Tools\tutorial.csprojAssemblyReference.cache
+C:\Users\insti\Documents\tutorial\.mono\temp\obj\Tools\tutorial.csproj.CoreCompileInputs.cache
+C:\Users\insti\Documents\tutorial\.mono\temp\obj\Tools\tutorial.dll
+C:\Users\insti\Documents\tutorial\.mono\temp\obj\Tools\tutorial.pdb
