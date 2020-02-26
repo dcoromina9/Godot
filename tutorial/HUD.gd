@@ -27,6 +27,7 @@ func _on_StartButton_pressed():
 
 func _on_MessageTimer_timeout():
 	$MessageLabel.hide()
+
 	
 
 
