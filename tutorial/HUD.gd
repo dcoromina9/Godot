@@ -24,6 +24,7 @@ func update_score(score):
 func _on_StartButton_pressed():
 	$StartButton.hide()
 	emit_signal("start_game")
+	print ("patata")
 
 func _on_MessageTimer_timeout():
 	$MessageLabel.hide()
