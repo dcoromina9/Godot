@@ -3,6 +3,7 @@ extends Node
 export (PackedScene) var Mob
 export (PackedScene) var Mob2
 var score
+var random
 
 func _ready():
 	randomize()
@@ -28,17 +29,22 @@ func _on_StartTimer_timeout():
 	$ScoreTimer.start()
 
 func _on_ScoreTimer_timeout():
-	score += 1
+	
 	$HUD.update_score(score)
 
 func _on_MobTimer_timeout():
 	# Choose a random location on Path2D.
 	$MobPath/MobSpawnLocation.set_offset(randi())
 	# Create a Mob instance and add it to the scene.
+	random = randi()%11+1
 	var mob = Mob.instance()
 	var mob2 = Mob2.instance()
-	add_child(mob)
-	add_child(mob2)
+	if random <= 8:
+		add_child(mob)
+		score += 1
+	elif random >= 10 :
+		add_child(mob2)
+		score += 2
 	# Set the mob's direction perpendicular to the path direction.
 	var direction = $MobPath/MobSpawnLocation.rotation + PI / 2
 	# Set the mob's position to a random location.
@@ -54,5 +60,4 @@ func _on_MobTimer_timeout():
 	mob2.linear_velocity = Vector2(rand_range(mob.min_speed, mob.max_speed), 0)
 	mob2.linear_velocity = mob.linear_velocity.rotated(direction)
 	$HUD.connect("start_game", mob, "_on_start_game")
-
-	$HUD.connect("start_game", mob, "_on_start_game")
+	$HUD.connect("start_game", mob2, "_on_start_game")

@@ -16,13 +16,13 @@ func _ready():
 func _process(delta):
 	var velocity = Vector2()  # The player's movement vector.
 	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
+		velocity.x += 1.5
 	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
+		velocity.x -= 1.5
 	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1
+		velocity.y += 1.5
 	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 1
+		velocity.y -= 1.5
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite.play()
